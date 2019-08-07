@@ -31,7 +31,7 @@ variable "cpu_utilization_period" {
 
 variable "cpu_utilization_treat_missing_data" {
   type    = string
-  default = 60
+  default = "notBreaching"
 }
 
 
@@ -52,7 +52,7 @@ variable "engine_cpu_utilization_period" {
 
 variable "engine_cpu_utilization_treat_missing_data" {
   type    = string
-  default = 60
+  default = "notBreaching"
 }
 
 
@@ -73,5 +73,5 @@ variable "freeable_memory_period" {
 
 variable "freeable_memory_treat_missing_data" {
   type    = string
-  default = 60
+  default = "notBreaching"
 }
