@@ -5,7 +5,7 @@ Terraform module to automate creating elasticache redis cluster alarms
 ```terraform
 module "terraform-elasticache-cluster-alarms" {
   source = "github.com/TourRadar/terraform-elasticache-cluster-alarms"
-  cluster_id = "some cluster id"
+  replication_group_id = aws_elasticache_replication_group.example.replication_group_id
   actions      = ["snsarn etc"]
   alarm_prefix = "MyAlarmPrefix"
   tags = {
