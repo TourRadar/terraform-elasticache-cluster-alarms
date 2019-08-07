@@ -1,11 +1,11 @@
-# terraform-lambda-alarms
-Terraform module to automate creating lambda alarms
+# terraform-elasticache-cluster-alarms
+Terraform module to automate creating elasticache redis cluster alarms
 
 ## Example usage
 ```terraform
-module "lambda-alarms" {
-  source = "github.com/TourRadar/terraform-lambda-alarms"
-  function_name = aws_lambda_function.main.arn
+module "terraform-elasticache-cluster-alarms" {
+  source = "github.com/TourRadar/terraform-elasticache-cluster-alarms"
+  cluster_id = "some cluster id"
   actions      = ["snsarn etc"]
   alarm_prefix = "MyAlarmPrefix"
   tags = {
