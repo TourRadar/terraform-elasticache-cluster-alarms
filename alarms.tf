@@ -4,7 +4,7 @@ data "aws_elasticache_replication_group" "cluster" {
 
 resource "aws_cloudwatch_metric_alarm" "cpu_utilization" {
   for_each            = data.aws_elasticache_replication_group.cluster.member_clusters
-  alarm_name          = "${var.alarm_prefix}: CPU utilization is high for ${var.replication_group_id}"
+  alarm_name          = "${var.alarm_prefix}: CPU utilization is high for ${each.value}"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = var.cpu_utilization_evaluation_periods
   threshold           = var.cpu_utilization_threshold
